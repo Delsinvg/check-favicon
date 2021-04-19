@@ -1,0 +1,13 @@
+name: 'Check favicon'
+description: 'This action checks whether the website has a favicon.'
+inputs:
+  site:  # id of input
+    description: 'url of the site to check'
+    required: true
+    default: 'https://codedor.be/nl'
+outputs:
+  favicon: # id of output
+    description: 'Link of the favicon'
+runs:
+  using: 'node12'
+  main: 'index.js'
