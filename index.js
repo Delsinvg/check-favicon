@@ -30,7 +30,10 @@ try {
 }
 
 function getHref(href) {
-    let start_pos = href.indexOf("href\"") + 1;
+    console.log(href)
+    let start_pos = href.indexOf("href=\"") + 1;
+    console.log(start_pos);
     let end_pos = href.indexOf("\"", start_pos);
+    console.log(end_pos);
     return resulthref = href.substring(start_pos, end_pos);
   }
