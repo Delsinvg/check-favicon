@@ -11,7 +11,7 @@ try {
       let favicon = response.data.match(
         /<link rel="icon" ([^<]+)>/
       );
-      console.log(favicon)
+      console.log(favicon[0])
     })
     .catch(function (error) {
       console.log(error);
