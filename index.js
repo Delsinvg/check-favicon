@@ -11,7 +11,6 @@ try {
       let favicon = response.data.match(
         /<link rel="icon" ([^<]+)>/
       );
-      console.log(favicon[0])
 
       if (! favicon) {
         core.setFailed("No favicon on page");
@@ -30,10 +29,7 @@ try {
 }
 
 function getHref(href) {
-    console.log(href)
     let start_pos = href.indexOf("href=\"") + 6;
-    console.log(start_pos);
     let end_pos = href.indexOf("\"", start_pos);
-    console.log(end_pos);
-    return resulthref = href.substring(start_pos, end_pos);
+    return resultHref = href.substring(start_pos, end_pos);
   }
