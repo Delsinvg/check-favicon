@@ -1,0 +1,20 @@
+
+on: [push]
+
+jobs:
+  check_favicon_job:
+    runs-on: ubuntu-latest
+    name: A job to check the favicon
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: check favicon action step
+        uses: ./ # Uses an action in the root directory
+        id: check
+        with:
+          site: 'https://www.odisee.be/'
+      # Use the output from the `check` step
+      - name: Get the favicon url
+        run: echo "The favicon is available on: ${{ steps.check.outputs.favicon }}"
