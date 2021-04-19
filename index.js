@@ -37,5 +37,3 @@ function getHref(href) {
     console.log(end_pos);
     return resulthref = href.substring(start_pos, end_pos);
   }
-
-<link rel="icon" href="https://codedor.be/favicon.ico" type="image/x-icon"/>
