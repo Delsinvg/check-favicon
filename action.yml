@@ -4,7 +4,7 @@ inputs:
   site:  # id of input
     description: 'url of the site to check'
     required: true
-    default: 'https://codedor.be/nl'
+    default: 'codedor.be'
 outputs:
   favicon: # id of output
     description: 'Link of the favicon'
