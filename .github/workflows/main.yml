@@ -1,4 +1,3 @@
-
 on: [push]
 
 jobs:
@@ -17,4 +16,4 @@ jobs:
           site: 'https://www.odisee.be/'
       # Use the output from the `check` step
       - name: Get the favicon url
-        run: echo "The favicon is available on: ${{ steps.check.outputs.favicon }}"
+        run: echo "The favicon is available on ${{ steps.check.outputs.favicon }}"
