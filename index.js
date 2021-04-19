@@ -12,6 +12,15 @@ try {
         /<link rel="icon" ([^<]+)>/
       );
       console.log(favicon[0])
+
+      if (! favicon) {
+        core.setFailed("No favicon on page");
+      }
+
+      if (favicon) {
+        let faviconUrl = getHref(favicon[0])
+        core.setOutput("favicon", faviconUrl);
+      }
     })
     .catch(function (error) {
       console.log(error);
