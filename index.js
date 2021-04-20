@@ -18,7 +18,7 @@ try {
 
       if (favicon) {
         console.log(favicon)
-        let faviconUrl = getHref(favicon[0])
+        let faviconUrl = getHref(favicon[1])
         core.setOutput("favicon", faviconUrl);
       }
     })
