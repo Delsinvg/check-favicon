@@ -4,12 +4,13 @@ const axios = require("axios").default;
 
 try {
     const siteUrl = core.getInput("site");
+    let regex = /<link ?([^<]+)? rel="icon" ?([^<]+)?>/g;
 
     axios
     .get(siteUrl)
     .then(function (response) {
       let favicon = response.data.match(
-        /<link rel="icon" ([^<]+)>/
+        regex
       );
 
       if (! favicon) {
@@ -17,8 +18,11 @@ try {
       }
 
       if (favicon) {
-        let faviconUrl = getHref(favicon[0])
-        core.setOutput("favicon", faviconUrl);
+        let faviconUrls = [];
+        for (let i = 0; i < favicon.length; i++) {
+          faviconUrls.push(getHref(favicon[i]));
+        }
+        core.setOutput("favicon", faviconUrls);
       }
     })
     .catch(function (error) {
